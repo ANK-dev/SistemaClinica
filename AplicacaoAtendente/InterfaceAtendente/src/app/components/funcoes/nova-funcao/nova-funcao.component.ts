@@ -9,7 +9,7 @@ import { FuncoesComponent } from "../funcoes.component";
 import { RouterLink } from "@angular/router";
 
 import { NovaFuncaoService } from '../../../services/nova_funcao/nova-funcao.service';
-import { RELOAD_FUNCOES } from 'src/app/constants';
+import { RELOAD_FUNCOES } from '../../constants';
 
 @Component({
     selector: "app-nova-funcao",

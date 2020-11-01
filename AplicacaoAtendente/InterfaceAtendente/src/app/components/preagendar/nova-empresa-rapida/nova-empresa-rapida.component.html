@@ -6,36 +6,30 @@
                 <div class="form-group row">
                     <div class="col-md-4">
                         <mat-form-field style="width: 300px;">
-                            <input  
-                                type="text" 
-                                id="nomeEmpresa" 
-                                name="nomeEmpresa" 
-                                placeholder="Nome" 
-                                autocomplete="off" 
-                                formControlName="nome" 
-                                matInput 
-                            />
+                            <input type="text" id="nomeEmpresa" name="nomeEmpresa" placeholder="Nome" autocomplete="off"
+                                formControlName="nome" matInput />
+                        </mat-form-field>
+                        <mat-form-field style="width: 300px;">
+                            <input type="text" id="cnpjEmpresa" name="cnpjEmpresa"   placeholder="CNPJ" autocomplete="off"
+                                formControlName="cnpj" maxlength="18"  onkeypress="mascara(this, '##.###.###/####-##')" matInput />
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
-                        <mat-progress-bar *ngIf="executandoRequisicao"
-                            class="example-margin"
-                            color="accent"
+                        <mat-progress-bar *ngIf="executandoRequisicao" class="example-margin" color="accent"
                             mode="query">
                         </mat-progress-bar>
                     </div>
                     <div class="col-md-2">
-                        <mat-progress-bar *ngIf="executandoRequisicao"
-                            class="example-margin"
-                            color="accent"
+                        <mat-progress-bar *ngIf="executandoRequisicao" class="example-margin" color="accent"
                             mode="query">
                         </mat-progress-bar>
                     </div>
                     <div class="col-md-8">
                         <button mat-raised-button type="reset" class="mx-1"> Limpar </button>
-                        <button mat-raised-button style="background-color: #53b800;color: white;" type="submit" class="m-1"> Concluir </button>
+                        <button mat-raised-button style="background-color: #53b800;color: white;" type="submit"
+                            class="m-1"> Concluir </button>
                     </div>
                 </div>
             </form>

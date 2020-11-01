@@ -16,7 +16,7 @@ import { FuncaoService } from "../../../services/funcao/funcao.service";
 import { SubgruposComponent } from "../subgrupos.component";
 
 import { NovoSubgrupoService } from '../../../services/novo_subgrupo/novo-subgrupo.service';
-import { RELOAD_SUBGRUPOS } from 'src/app/constants'
+import { RELOAD_SUBGRUPOS } from '../../constants'
 
 @Component({
     selector: "app-novo-subgrupo",

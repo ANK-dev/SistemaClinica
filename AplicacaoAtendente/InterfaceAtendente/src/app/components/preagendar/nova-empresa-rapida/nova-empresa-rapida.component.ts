@@ -7,6 +7,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { EmpresasService } from "../../../services/empresas/empresas.service";
 import { NovaEmpresaService } from '../../../services/nova_empresa/nova-empresa.service'
 
+import {RELOAD_EMPRESAS} from '../../constants';
+
 @Component({
     selector: "app-nova-empresa-rapida",
     templateUrl: "./nova-empresa-rapida.component.html",
@@ -34,32 +36,22 @@ export class NovaEmpresaRapidaComponent implements OnInit {
     configurarFormulario() {
         this.formularioNovaEmpresa = this.formBuilder.group({
             nome: [null, Validators.required],
-            cnpj: [""],
-            telefone1: [""],
-            telefone2: [""],
-            tipoPgto: [""],
-            rua: [""],
-            numero: [""],
-            bairro: [""],
-            cidade: [""],
-            cep: [""],
-            estado: [""]
+            cnpj: [null],
+            telefone1: [null],
+            telefone2: [null],
+            tipoPgto: [null],
+            rua: [null],
+            numero: [null],
+            bairro: [null],
+            cidade: [null],
+            cep: [null],
+            estado: [null]
         });
     }
 
     createEmpresa() {
         let form = this.formularioNovaEmpresa.value;
-
-        //Testa se algum campo está vazio
-        for (let campo in form) {
-            if (form[campo]==null){
-            this._snackBar.open("Dados em vermelho incorretos ou em branco, não foi possivel cadastrar !!!", null, {
-                duration: 6000,
-            });
-            return;
-            }
-        }
-
+   
         //Testa se algum campo não esta esta seguindo o padrão de validação 
         if (this.formularioNovaEmpresa.invalid) {
             this.executandoRequisicao = false;
@@ -78,7 +70,7 @@ export class NovaEmpresaRapidaComponent implements OnInit {
                 this.openSnackBar("Cadastro efetuado com sucesso !!!", 1);
                 // Reinicia os estados do formulário, também eliminando os erros de required
                 //this.att.ngOnInit();
-                this.novaEmpresaService.updateTabelaEmpresas('RELOAD_EMPRESAS');
+                this.novaEmpresaService.updateTabelaEmpresas(RELOAD_EMPRESAS);
                 this.formularioNovaEmpresa.reset();
                 Object.keys(this.formularioNovaEmpresa.controls).forEach(
                     key => {

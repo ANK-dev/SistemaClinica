@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SocketService } from '../app/services/socket/socket.service';
 import { PreagendarService } from './services/preagendar/preagendar.service';
 import { InicioService } from './services/inicio/inicio.service';
-import { RELOAD_AGENDADOS, RELOAD_INICIO, BROADCAST } from './constants';
+import { RELOAD_AGENDADOS, RELOAD_INICIO, BROADCAST } from '../app/components/constants';
 
 @Component({
     selector: 'app-root',

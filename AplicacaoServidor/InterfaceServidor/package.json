@@ -1,7 +1,7 @@
 {
-  "name": "interface-servidor",
+  "name": "aplicacao-servidor",
   "productName": "Aplicacao Servidor LabMed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -13,10 +13,13 @@
     "electron": "electron .",
     "electron-build": "ng build --prod && electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dist-all-platforms": "electron-builder -mwl",
+    "dist-win": "electron-builder --win"
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/file-input": "^4.0.1",
     "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.2.3",
     "@angular/common": "~8.1.3",
@@ -29,7 +32,6 @@
     "@angular/router": "~8.1.3",
     "bootstrap": "^4.5.0",
     "chrome-headless-render-pdf": "^1.8.4",
-    "electron-packager": "^14.2.1",
     "hammerjs": "^2.0.8",
     "html2canvas": "^1.0.0-rc.5",
     "jquery": "^3.5.1",
@@ -39,9 +41,11 @@
     "ngx-electron": "^2.2.0",
     "ngx-webstorage-service": "^4.1.0",
     "popper.js": "^1.16.1",
+    "printer": "^0.4.0",
     "rxjs": "~6.4.0",
     "socket.io": "^2.3.0",
     "tslib": "^1.13.0",
+    "uuid": "^8.3.1",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -55,6 +59,7 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^8.10.61",
     "codelyzer": "^5.2.2",
+    "electron": "^10.1.3",
     "electron-builder": "^22.8.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -81,6 +86,7 @@
       "icon": "build/logo.ico"
     }
   },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.",
   "author": "Serra Jr. Engenharia",
   "license": "ISC"
 }

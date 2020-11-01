@@ -11,7 +11,7 @@ import { paciente } from "../../services/paciente/paciente";
 import { ModalPacientesComponent } from './modal-pacientes/modal-pacientes.component';
 
 import {NovoPacienteService} from '../../services/novo_paciente/novo-paciente.service';
-import { RELOAD_PACIENTES, DONT_RELOAD_PACIENTES } from 'src/app/constants';
+import { RELOAD_PACIENTES, DONT_RELOAD_PACIENTES } from '../constants';
 
 @Component({
     selector: "app-pacientes",

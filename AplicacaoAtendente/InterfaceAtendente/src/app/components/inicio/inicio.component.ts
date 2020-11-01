@@ -15,7 +15,7 @@ import { ModalEstadosInicioComponent } from './modal-estados-inicio/modal-estado
 import { ModalCEPComponent } from '../modal-cep/modal-cep.component';
 
 import { setData } from '../date'
-import { RELOAD_INICIO, DONT_RELOAD_INICIO, emEspera, emConsulta, encerrado } from 'src/app/constants';
+import { RELOAD_INICIO, DONT_RELOAD_INICIO, emEspera, emConsulta, encerrado } from '../constants';
 
 export interface estadoLista {
     codConsulta: number;

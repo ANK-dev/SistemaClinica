@@ -40,65 +40,51 @@ export class ModalEmpresaComponent implements OnInit {
     this.empresaService.lerEmpresa(this.data.id).subscribe(response => {
       this.empresa = response;
       this.formularioEmpresa = this.formBuilder.group({
-        codigo: [this.empresa.codEmpresa, Validators.required],
+        codigo: [this.empresa.codEmpresa],
         nome: [{
           value: this.empresa.nome,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }, Validators.required],
         cnpj: [{
           value: this.empresa.cnpj,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }],
         telefone1: [{
           value: this.empresa.telefone1,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, [Validators.required,
-        Validators.pattern('^1\\d\\d(\\d\\d)?$|^0800 ?\\d{3} ?\\d{4}$|^(\\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\\d\\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\\d[ .-]?)?(9|9[ .-])?[2-9]\\d{3}[ .-]?\\d{4}$')
-        ]],
+        }],
         telefone2: [{
           value: this.empresa.telefone2,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        },
-        Validators.pattern('^1\\d\\d(\\d\\d)?$|^0800 ?\\d{3} ?\\d{4}$|^(\\(0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\\d\\) ?|0?([1-9a-zA-Z][0-9a-zA-Z])?[1-9]\\d[ .-]?)?(9|9[ .-])?[2-9]\\d{3}[ .-]?\\d{4}$')
-        ],
+        }],
         tipoPgto: [{
           value: this.empresa.tipoPgto,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }],
         rua: [{
           value: this.empresa.rua,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }],
         numero: [{
           value: this.empresa.numero,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }],
         bairro: [{
           value: this.empresa.bairro,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }],
         cidade: [{
           value: this.empresa.cidade,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ],
+        }],
         cep: [{
           value: this.empresa.cep,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, [Validators.required,
-        Validators.pattern('^\\d{5}-\\d{3}$')
-        ]],
+        }],
         estado: [{
           value: this.empresa.estado,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required
-        ]
+        }]
       });
     });
   }

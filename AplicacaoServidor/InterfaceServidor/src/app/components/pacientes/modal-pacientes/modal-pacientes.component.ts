@@ -45,19 +45,19 @@ export class ModalPacientesComponent implements OnInit {
         rg: [{
           value: this.paciente.rg,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required],
+        }],
         cpf: [{
           value: this.paciente.cpf,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required],
+        }],
         sexo: [{
           value: this.paciente.sexo,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required],
+        }],
         dataNascimento: [{
           value: this.paciente.nascimento,
           disabled: this.acaoModal == 'EDITAR' ? false : true
-        }, Validators.required],
+        }],
       })
     })
   }

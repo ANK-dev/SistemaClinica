@@ -15,7 +15,7 @@ import { ModalCatalogoComponentAgendados } from './modal-catalogo/modal-catalogo
 import { ModalEstadosAgendadosComponent } from './modal-estados-agendados/modal-estados-agendados.component';
 
 import { setData } from '../date'
-import { RELOAD_AGENDADOS, DONT_RELOAD, agendado, cancelado, atrasado } from 'src/app/constants';
+import { RELOAD_AGENDADOS, DONT_RELOAD, agendado, cancelado, atrasado } from '../constants';
 
 export interface estadoLista {
   codConsulta: number;

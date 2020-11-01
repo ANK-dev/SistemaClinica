@@ -7,6 +7,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { PacienteService } from "../../../services/paciente/paciente.service";
 import {NovoPacienteService} from '../../../services/novo_paciente/novo-paciente.service';
 
+import {RELOAD_PACIENTES} from '../../constants';
+
 @Component({
     selector: "app-novo-paciente-rapido",
     templateUrl: "./novo-paciente-rapido.component.html",
@@ -35,11 +37,11 @@ export class NovoPacienteRapidoComponent implements OnInit {
 
     configurarFormulario() {
         this.formularioNovoPaciente = this.formBuilder.group({
-            nome: [null, [Validators.required,Validators.pattern(this.SoLetras_Validator)]],
-            cpf: [''],
-            rg: [''],
-            sexo: [''],
-            nascimento: [''],
+            nome: [null, Validators.required],
+            cpf: [null],
+            rg: [null],
+            sexo: [null],
+            nascimento: [null],
         });
     }
 
@@ -62,7 +64,7 @@ export class NovoPacienteRapidoComponent implements OnInit {
         //Armazenando a resposta para dar feedback ao usuário
         this.pacienteService.cadastrarPaciente(form).subscribe(
             response => {
-                this.novoPacienteService.updateTabelaPaciente('RELOAD_Pacientes');
+                this.novoPacienteService.updateTabelaPaciente(RELOAD_PACIENTES);
                 this.openSnackBar("Cadastro efetuado com sucesso !!!", 1);
                 this.formularioNovoPaciente.reset();
                 Object.keys(this.formularioNovoPaciente.controls).forEach(
@@ -94,3 +96,7 @@ export class NovoPacienteRapidoComponent implements OnInit {
         });
     }
 }
+
+
+
+

@@ -9,7 +9,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { EmpresasService } from "../../services/empresas/empresas.service";
 import { ModalEmpresaComponent } from "./modal-empresa/modal-empresa.component";
 import {NovaEmpresaService} from '../../services/nova_empresa/nova-empresa.service'
-import { RELOAD_EMPRESAS, DONT_RELOAD_EMPRESAS } from 'src/app/constants';
+import { RELOAD_EMPRESAS, DONT_RELOAD_EMPRESAS } from '../constants';
 
 export interface empresaLista {
     codEmpresa: number;
